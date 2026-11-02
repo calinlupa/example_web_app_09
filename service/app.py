@@ -29,7 +29,7 @@ from collections import deque
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-CONFIRMATION_MODE = "async"  # "async": the provider calls our webhook. "sync": wait for its answer inside the request
+CONFIRMATION_MODE = "sync"  # wait for the provider answer inside the request (about 3.4 s)
 POOL_SIZE = 8  # workers
 OFFERED_RPS = 4  # checkout requests a second
 QUEUE_LIMIT = 4  # requests waiting for a worker; beyond that they are rejected
